@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { reader } from '../../../reader'
 import Link from 'next/link'
+import { ShowcaseLink } from '../../../../component/showcase-link'
+import { ShowcaseYouTubeVideo } from '../../../../component/showcase-youtube-video'
 
 export default async function AuthorPage({ params }: { params: { slug: string } }) {
   const { slug } = params
@@ -27,19 +29,10 @@ export default async function AuthorPage({ params }: { params: { slug: string } 
             {author.showcase.map((item, index) => (
               <li key={index}>
                 {item.discriminant === 'link' && (
-                  <a href={item.value.url} target="_blank" rel="noopener noreferrer">
-                    {item.value.label}
-                  </a>
+                  <ShowcaseLink url={item.value.url} label={item.value.label} />
                 )}
                 {item.discriminant === 'youtubeVideoId' && (
-                  <iframe
-                    width="560"
-                    height="315"
-                    src={`https://www.youtube.com/embed/${item.value}`}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  ></iframe>
+                  <ShowcaseYouTubeVideo videoId={item.value} />
                 )}
               </li>
             ))}
