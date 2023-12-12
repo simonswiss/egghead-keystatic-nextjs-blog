@@ -1,0 +1,23 @@
+{
+  "name": "Jed",
+  "showcase": [
+    {
+      "discriminant": "youtubeVideoId",
+      "value": "yS0jUnmBujE"
+    },
+    {
+      "discriminant": "link",
+      "value": {
+        "label": "Keystatic website",
+        "url": "https://keystatic.com"
+      }
+    },
+    {
+      "discriminant": "link",
+      "value": {
+        "label": "Thinkmill website",
+        "url": "https://thinkmill.com.au"
+      }
+    }
+  ]
+}
