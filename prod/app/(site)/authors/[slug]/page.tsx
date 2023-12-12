@@ -55,3 +55,8 @@ export default async function AuthorPage({ params }: { params: { slug: string } 
     </div>
   )
 }
+
+export async function generateStaticParams() {
+  const authorSlugs = await reader.collections.authors.list()
+  return authorSlugs.map((authorSlug) => ({ slug: authorSlug }))
+}
