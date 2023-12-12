@@ -4,6 +4,7 @@ import { ShowcaseYouTubeVideo } from './components/showcase-youtube-video'
 export default config({
   storage: {
     kind: 'cloud',
+    pathPrefix: 'prod',
   },
   cloud: {
     project: 'simonswiss/keystatic-101',
