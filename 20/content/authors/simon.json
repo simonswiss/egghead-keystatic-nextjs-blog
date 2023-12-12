@@ -1,0 +1,17 @@
+{
+  "name": "Simon",
+  "avatar": "/images/avatars/simon/avatar.png",
+  "showcase": [
+    {
+      "discriminant": "youtubeVideoId",
+      "value": "tfgLd5ZSNPc"
+    },
+    {
+      "discriminant": "link",
+      "value": {
+        "label": "Simon's website",
+        "url": "https://simonswiss.com"
+      }
+    }
+  ]
+}
