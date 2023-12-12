@@ -3,12 +3,13 @@ import { ShowcaseYouTubeVideo } from './components/showcase-youtube-video'
 
 export default config({
   storage: {
-    kind: 'cloud',
+    kind: 'github',
     pathPrefix: 'prod',
+    repo: 'simonswiss/egghead-keystatic-nextjs-blog',
   },
-  cloud: {
-    project: 'simonswiss/keystatic-101',
-  },
+  // cloud: {
+  //   project: 'simonswiss/keystatic-101',
+  // },
   ui: {
     brand: {
       name: 'Keystatic mini course',
