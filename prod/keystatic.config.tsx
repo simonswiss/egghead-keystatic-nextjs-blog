@@ -1,15 +1,30 @@
-import { config, collection, fields, component, singleton } from '@keystatic/core'
+import {
+  config,
+  collection,
+  fields,
+  component,
+  singleton,
+  LocalConfig,
+  CloudConfig,
+} from '@keystatic/core'
 import { ShowcaseYouTubeVideo } from './components/showcase-youtube-video'
 
+const isProd = process.env.NODE_ENV === 'production'
+
+const localMode: LocalConfig['storage'] = {
+  kind: 'local',
+}
+
+const remoteMode: CloudConfig['storage'] = {
+  kind: 'cloud',
+  pathPrefix: 'prod',
+}
+
 export default config({
-  storage: {
-    kind: 'github',
-    pathPrefix: 'prod',
-    repo: 'simonswiss/egghead-keystatic-nextjs-blog',
+  storage: isProd ? remoteMode : localMode,
+  cloud: {
+    project: 'simonswiss/keystatic-101',
   },
-  // cloud: {
-  //   project: 'simonswiss/keystatic-101',
-  // },
   ui: {
     brand: {
       name: 'Keystatic mini course',
