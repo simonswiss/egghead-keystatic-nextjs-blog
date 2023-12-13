@@ -1,6 +1,11 @@
 {
   "name": "Simon",
-  "avatar": "/images/avatars/simon/avatar.png",
+  "cloud-avatar": {
+    "src": "https://tstr09nnhnz3.keystatic.net/plr5oic8drng/images/fo6het2nldt2/avatar",
+    "alt": "Illustration of a blond boy holding a basketball at the local playground",
+    "height": 1024,
+    "width": 1024
+  },
   "showcase": [
     {
       "discriminant": "youtubeVideoId",

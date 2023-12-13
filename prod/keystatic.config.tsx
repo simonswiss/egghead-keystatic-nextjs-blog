@@ -111,10 +111,8 @@ export default config({
       format: { data: 'json' },
       schema: {
         name: fields.slug({ name: { label: 'Name' } }),
-        avatar: fields.image({
-          label: 'Avatar',
-          directory: 'public/images/avatars',
-          publicPath: '/images/avatars',
+        'cloud-avatar': fields.cloudImage({
+          label: 'Avatar (Cloud)',
         }),
         showcase: fields.blocks(
           {

@@ -42,7 +42,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
                   <Link href={`/authors/${author.slug}`}>{author.name}</Link>
                 </h3>
                 <Image
-                  src={author.avatar || '/images/avatars/placeholder.png'}
+                  src={
+                    author['cloud-avatar']?.src
+                      ? author['cloud-avatar']?.src + '?w=200&h=200'
+                      : 'https://tstr09nnhnz3.keystatic.net/plr5oic8drng/images/khya5ev8j8g5/placeholder?w=200&h=200'
+                  }
                   width={100}
                   height={100}
                   alt={`Avatar for ${author.name}`}

@@ -16,7 +16,11 @@ export default async function AuthorPage({ params }: { params: { slug: string } 
     <div>
       <h1>{author.name}</h1>
       <Image
-        src={author.avatar || '/images/avatars/placeholder.png'}
+        src={
+          author['cloud-avatar']?.src
+            ? author['cloud-avatar']?.src + '?w=360&h=360'
+            : 'https://tstr09nnhnz3.keystatic.net/plr5oic8drng/images/khya5ev8j8g5/placeholder?w=360&h=360'
+        }
         width={180}
         height={180}
         alt={`Avatar for ${author.name}`}
