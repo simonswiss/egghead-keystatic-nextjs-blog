@@ -1,0 +1,46 @@
+---
+title: First post
+authors:
+  - jed
+  - simon
+---
+Hello from the Keystatic Admin UI!
+
+You can edit this page in the [Admin UI](/keystatic/collection/posts/item/first-post), or directly in your IDE at `./posts/first-post.mdoc`.
+
+{% youtube-video youtubeVideoId="oEpLh1LnrxA" /%}
+
+A little more text after the video.
+
+Keystatic has two&nbsp;*concepts*&nbsp;or structures to organise data:&nbsp;`collections`&nbsp;and&nbsp;`singletons`.
+
+Those are defined in the&nbsp;[**Keystatic configuration**](https://keystatic.com/docs/configuration).
+
+You get a lot of control and flexibility with&nbsp;*where*&nbsp;your content gets generated, both at the&nbsp;`collection`&nbsp;or&nbsp;`singleton`&nbsp;level, and at the&nbsp;`field`&nbsp;level for certain field types, like images.
+
+### Path configuration
+
+You can define&nbsp;*where*&nbsp;Keystatic should store collection entries and singletons via the&nbsp;`path`&nbsp;property in the collection/singleton top-level options:
+
+```
+// Keystatic config
+export default config({
+  collections: {
+    posts: collection({
+      label: 'Posts',
+      path: 'content/posts/*/',
+      // ...
+    })
+  },
+  singletons: {
+    settings: singleton({
+      label: 'Settings',
+      path: 'content/posts/',
+      // ...
+   })
+  }
+})
+
+```
+
+The optional trailing slash&nbsp;`/`&nbsp;on that path has an impact on the content structure - read below for more details on&nbsp;`collection paths`&nbsp;and&nbsp;`singleton paths`.
